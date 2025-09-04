@@ -7,7 +7,8 @@ package clases.lenguajes;
 /**
  *
  * @author walter
- * @param <T>
+ * clase del libro con metodo para comparse entre si
+ * 
  */
 public class Libro implements Comparable<Libro> {
 

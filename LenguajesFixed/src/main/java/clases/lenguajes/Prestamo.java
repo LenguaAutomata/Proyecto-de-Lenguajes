@@ -8,6 +8,7 @@ package clases.lenguajes;
  *
  * @author walte
  * @param <T>
+ * Clase prestamo en donde se aguaradaran los prestamos hechos
  */
 public class Prestamo<T> {
 

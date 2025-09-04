@@ -7,6 +7,7 @@ package clases.lenguajes;
 /**
  *
  * @author walter
+ * Clase de los estudantes con la capacidad de comparar entre si
  */
 public class Estudiante implements Comparable<Estudiante> {
 

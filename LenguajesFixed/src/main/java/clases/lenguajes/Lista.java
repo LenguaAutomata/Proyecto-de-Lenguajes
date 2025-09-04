@@ -8,6 +8,7 @@ package clases.lenguajes;
  *
  * @author walter
  * @param <T>
+ * Lista generica con la capacidad de usar objetos genericos
  */
 public class Lista<T extends Comparable<T>> {
 

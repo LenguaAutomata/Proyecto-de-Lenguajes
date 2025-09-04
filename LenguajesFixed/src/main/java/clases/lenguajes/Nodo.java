@@ -8,7 +8,7 @@ package clases.lenguajes;
  *
  * @author walter
  * @param <T>
- *
+ *Nodo de la lsita generica
  */
 public class Nodo<T extends Comparable<T>> {
 
