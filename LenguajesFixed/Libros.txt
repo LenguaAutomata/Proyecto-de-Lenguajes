@@ -1,0 +1,7 @@
+id_libro,titulo_libro
+LIB001,El Principito
+LIB002,Cien Años de Soledad
+LIB004,Don Quijote de la Mancha
+LIB005,Fahrenheit 451
+LIB006,Crónica de una Muerte Anunciada
+LIB002,Cien Años de Soledad
