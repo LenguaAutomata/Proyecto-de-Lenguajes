@@ -5,18 +5,21 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 public class Prestamo implements Comparable<Prestamo> {
+
     private String Fecha_prestamo;
     private String Fecha_devolucion;
     private Estudiante Estudiante;
     private Libro Libro;
+    private boolean prestamo;
 
     public Prestamo(String Fecha_prestamo, String Fecha_devolucion, Estudiante Estudiante, Libro Libro) {
         this.Fecha_prestamo = Fecha_prestamo;
         this.Fecha_devolucion = Fecha_devolucion;
         this.Estudiante = Estudiante;
         this.Libro = Libro;
+        this.prestamo = true;
     }
-    
+
     public Prestamo() {
     }
 
@@ -51,8 +54,17 @@ public class Prestamo implements Comparable<Prestamo> {
     public void setLibro(Libro Libro) {
         this.Libro = Libro;
     }
-    
+
+    public boolean isPrestamo() {
+        return prestamo;
+    }
+
+    public void setPrestamo(boolean prestamo) {
+        this.prestamo = prestamo;
+    }
+
     public boolean estaVencido() {
+
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDate fechaDevolucion = LocalDate.parse(this.Fecha_devolucion, formatter);
@@ -61,14 +73,16 @@ public class Prestamo implements Comparable<Prestamo> {
         } catch (DateTimeParseException e) {
             return false;
         }
+       
+
     }
-    
+
     public int diasRetraso() {
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDate fechaDevolucion = LocalDate.parse(this.Fecha_devolucion, formatter);
             LocalDate hoy = LocalDate.now();
-            
+
             if (hoy.isAfter(fechaDevolucion)) {
                 return (int) java.time.temporal.ChronoUnit.DAYS.between(fechaDevolucion, hoy);
             }
@@ -77,16 +91,16 @@ public class Prestamo implements Comparable<Prestamo> {
             return 0;
         }
     }
-    
+
     @Override
     public String toString() {
         String estado = estaVencido() ? "VENCIDO (" + diasRetraso() + " días de retraso)" : "VIGENTE";
-        return "Prestamo{" + 
-               "Estudiante=" + Estudiante.getNombre() + 
-               ", Libro=" + Libro.getTitulo() + 
-               ", Fecha_prestamo=" + Fecha_prestamo + 
-               ", Fecha_devolucion=" + Fecha_devolucion +
-               ", Estado=" + estado + '}';
+        return "Prestamo{"
+                + "Estudiante=" + Estudiante.getNombre()
+                + ", Libro=" + Libro.getTitulo()
+                + ", Fecha_prestamo=" + Fecha_prestamo
+                + ", Fecha_devolucion=" + Fecha_devolucion
+                + ", Estado=" + estado + '}';
     }
 
     @Override

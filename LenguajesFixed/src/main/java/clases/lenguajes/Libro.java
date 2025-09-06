@@ -4,11 +4,13 @@ public class Libro implements Comparable<Libro> {
     private String id;
     private String Titulo;
     private int Nprestado;
+    private boolean Dispobible;
 
     public Libro(String id, String Titulo) {
         this.id = id;
         this.Titulo = Titulo;
         this.Nprestado = 0;
+        this.Dispobible=true;
     }
 
     public Libro() {
@@ -46,6 +48,15 @@ public class Libro implements Comparable<Libro> {
     public int getNprestado() {
         return Nprestado;
     }
+
+    public boolean isDispobible() {
+        return Dispobible;
+    }
+
+    public void setDispobible(boolean Dispobible) {
+        this.Dispobible = Dispobible;
+    }
+    
 
     @Override
     public String toString() {

@@ -1,0 +1,1 @@
+Buenas ingeniera, el codigo esta casi completo, el unico detalle esu qeu al parecer no puede leer una archivo con un prestamo sin una de las dos fechas, la verdad tengo y esta la la solucion en el proyecto pero realmente no se porque no me imprime en la consola, pero si se debugea el protecto, funciona correctamente. La verdad no se cuanto de nota vamos a perder con ese detalle.
